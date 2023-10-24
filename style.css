@@ -5,40 +5,65 @@
   color: white;
 }
 
+:root {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
 .page-container {
   display: flex;
   flex-flow: row wrap;
-  width: 100vw;
-  height: 100vh;
 }
 
 .img-container {
-  max-width: 40vw;
-  min-height: 100vh;
+  box-sizing: border-box;
+  width: 40vw;
+  height: 100%;
 }
 
 .img-container img {
+  max-inline-size: 100%;
+  max-block-size: 100%;
   height: 100%;
   object-fit: cover;
-  float: left;
 }
 
 .sign-up {
-  min-width: 60vw;
-  object-fit: fill;
+  box-sizing: border-box;
+  padding: 40px;
+  width: 58vw;
   background-color: rgb(19, 18, 18);
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
 }
 
+@media screen and (max-width: 750px) {
+  .sign-up {
+    box-sizing: border-box;
+    padding: 40px;
+    width: 100vw;
+    background-color: rgb(19, 18, 18);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+  }
+
+  .img-container {
+    box-sizing: border-box;
+    width: 100vw;
+    height: 400px;
+  }
+}
+
 .hero-txt {
   font-size: 4rem;
-  padding-block: 4rem 4rem;
+  padding-block: 0rem 4rem;
 }
 
 .dummy-txt > p {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .img-container img {
@@ -50,6 +75,52 @@
 }
 
 .remote-txt {
-  padding: 3rem 0px;
+  padding: 1rem 0px;
   font-size: 1.25rem;
 }
+
+input {
+  background-color: rgba(255, 255, 240, 0.199);
+  box-sizing: border-box;
+  padding: 15px;
+  margin: 5px;
+  border-style: none;
+}
+
+label {
+  box-sizing: border-box;
+  margin: 0px 0px;
+  width: 20rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+form {
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+#submit {
+  display: inline-block;
+  margin-left: 8rem;
+  margin-top: 3rem;
+  width: 8rem;
+  min-height: 3rem;
+  border-radius: 5px;
+  border-style: none;
+  color: black;
+  background-color: rgb(40, 102, 138);
+}
+
+#submit:hover {
+  background-color: rgb(55, 140, 189);
+  border-style: solid;
+  border-color: white;
+  box-shadow: 0px 0px 9px 1px rgb(37, 128, 131);
+}
+/* 
+input:required {
+  background-color: rgba(214, 111, 111, 0.308);
+} */
