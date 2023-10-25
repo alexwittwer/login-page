@@ -2,7 +2,6 @@
   font-family: "Raleway", sans-serif;
   margin: 0;
   padding: 0;
-  color: rgb(56, 44, 28);
 }
 
 p {
@@ -10,13 +9,16 @@ p {
 }
 
 :root {
-  background-color: rgb(236, 218, 201);
+  --bgcolor: "rgb(32, 32, 32)";
+  --txtcolor: rgb(197, 195, 192);
+  background-color: rgb(32, 32, 32);
 }
 
 .page-container {
   display: flex;
   flex-flow: row wrap;
-  background-color: rgb(248, 224, 201);
+  background-color: var(--bgcolor);
+  color: var(--txtcolor);
 }
 
 .img-container {
@@ -39,27 +41,40 @@ p {
   padding: 30px;
   width: 58.4vw;
   height: 100vh;
-  background-color: rgb(248, 224, 201);
+  background-color: var(--bgcolor);
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
 }
 
 @media screen and (max-width: 960px) {
+  .page-container {
+    display: flex;
+    flex-flow: column wrap;
+    background-color: var(--bgcolor);
+    color: var(--txtcolor);
+    gap: 0px;
+    align-items: center;
+  }
+
   .sign-up {
     box-sizing: border-box;
-    padding-left: 40px;
-    width: 100vw;
-    background-color: rgb(248, 224, 201);
+    padding-left: 10%;
+    min-width: 80%;
+    background-color: var(rgb(32, 32, 32));
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
   }
 
   .img-container {
     box-sizing: border-box;
     width: 100vw;
     height: 540px;
+  }
+  form {
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 0.4rem;
   }
 }
 
@@ -83,7 +98,8 @@ p {
 }
 
 input {
-  background-color: rgba(90, 90, 90, 0.39);
+  background-color: var(--txtcolor);
+  font-size: 1rem;
   padding: 15px;
   margin: 5px;
   border-style: none;
@@ -97,8 +113,37 @@ input:focus {
   outline: none;
 }
 
-input:required {
+[name="password"],
+[name="password-confirm"] {
   box-shadow: inset 0px 0px 0px 3px rgb(27, 122, 160);
+}
+
+input:valid + span::before {
+  content: "✓";
+  color: green;
+}
+input + span {
+  position: relative;
+}
+
+input + span::before {
+  position: absolute;
+  right: -20px;
+  top: 5px;
+}
+
+input:invalid {
+  border: 2px solid red;
+}
+
+input:invalid + span::before {
+  content: "✖";
+  color: red;
+}
+
+input:valid + span::before {
+  content: "✓";
+  color: green;
 }
 
 label {
@@ -113,7 +158,7 @@ label {
 form {
   box-sizing: border-box;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: row wrap;
 }
 
 #submit {
