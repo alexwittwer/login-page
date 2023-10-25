@@ -9,6 +9,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Raleway"
     />
+    <script src="script.js" defer></script>
   </head>
   <body>
     <div class="page-container">
@@ -52,7 +53,13 @@
           /></label>
           <label for="password"
             >password
-            <input type="password" name="password" id="password" required
+            <input
+              type="password"
+              name="password"
+              id="password"
+              required
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+              title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
           /></label>
           <label for="password-confirm"
             >re-enter password
@@ -62,6 +69,16 @@
               id="password-confirm"
               required
           /></label>
+
+          <div id="message">
+            <h3>Password must contain the following:</h3>
+            <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+            <p id="capital" class="invalid">
+              A <b>capital (uppercase)</b> letter
+            </p>
+            <p id="number" class="invalid">A <b>number</b></p>
+            <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+          </div>
           <div class="button-wrap">
             <button id="submit" type="submit">Sign up</button>
           </div>

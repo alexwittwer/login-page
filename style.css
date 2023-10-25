@@ -8,9 +8,14 @@ p {
   max-width: clamp(40ch, 60ch, 75ch);
 }
 
+body {
+}
+
 :root {
   --bgcolor: "rgb(32, 32, 32)";
   --txtcolor: rgb(197, 195, 192);
+  --pwd-invalid: rgb(167, 66, 27);
+  --pwd-valid: rgb(81, 150, 16);
   background-color: rgb(32, 32, 32);
 }
 
@@ -107,43 +112,35 @@ input {
 
 input:focus {
   box-sizing: inherit;
-  border-color: rgb(31, 169, 204);
-  border-style: solid;
-  border-width: 4px;
-  outline: none;
+  border: inset 9px solid rgb(31, 169, 204);
+  box-shadow: 0px 0px 8px 2px rgb(31, 169, 204);
 }
 
-[name="password"],
-[name="password-confirm"] {
-  box-shadow: inset 0px 0px 0px 3px rgb(27, 122, 160);
+[name="password"] {
 }
 
-input:valid + span::before {
-  content: "✓";
-  color: green;
-}
-input + span {
-  position: relative;
+[name="password"]:focus {
+  box-shadow: 0px 0px 0px 0px;
 }
 
-input + span::before {
-  position: absolute;
-  right: -20px;
-  top: 5px;
+#message {
+  display: none;
+  padding: 0px;
+  margin-top: 0px;
+  font-size: 1rem;
+}
+#message p {
+  padding: 0px 5px;
 }
 
-input:invalid {
-  border: 2px solid red;
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: rgb(39, 109, 17);
 }
 
-input:invalid + span::before {
-  content: "✖";
-  color: red;
-}
-
-input:valid + span::before {
-  content: "✓";
-  color: green;
+/* Add a red text color and an "x" icon when the requirements are wrong */
+.invalid {
+  color: rgb(160, 85, 34);
 }
 
 label {
@@ -169,7 +166,8 @@ form {
   min-height: 3rem;
   border-radius: 5px;
   border-style: none;
-  color: black;
+  color: ivory;
+  font-size: 1.25rem;
   background-color: rgb(40, 102, 138);
 }
 
