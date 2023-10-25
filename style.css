@@ -1,5 +1,5 @@
 * {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Raleway", sans-serif;
   margin: 0;
   padding: 0;
   color: white;
@@ -9,37 +9,47 @@
   padding: 0;
   margin: 0;
   border: 0;
+  background-color: rgb(17, 17, 17);
 }
 
 .page-container {
   display: flex;
   flex-flow: row wrap;
+  background-color: rgb(17, 17, 17);
 }
 
 .img-container {
   box-sizing: border-box;
+  position: relative;
+  display: flex;
   width: 40vw;
   height: 100%;
+  padding: 0px;
+  margin: 0px;
 }
 
 .img-container img {
   max-inline-size: 100%;
   max-block-size: 100%;
   height: 100%;
+  margin: 0px;
+  border: none;
+  padding: 0px;
   object-fit: cover;
 }
 
 .sign-up {
   box-sizing: border-box;
   padding: 40px;
-  width: 58vw;
-  background-color: rgb(19, 18, 18);
+  width: 58.4vw;
+  height: 100vh;
+  background-color: rgb(17, 17, 17);
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 960px) {
   .sign-up {
     box-sizing: border-box;
     padding: 40px;
@@ -53,11 +63,12 @@
   .img-container {
     box-sizing: border-box;
     width: 100vw;
-    height: 400px;
+    height: 540px;
   }
 }
 
 .hero-txt {
+  font-family: "Raleway", serif;
   font-size: 4rem;
   padding-block: 0rem 4rem;
 }
@@ -120,7 +131,3 @@ form {
   border-color: white;
   box-shadow: 0px 0px 9px 1px rgb(37, 128, 131);
 }
-/* 
-input:required {
-  background-color: rgba(214, 111, 111, 0.308);
-} */
