@@ -113,9 +113,11 @@ p {
   .sign-up {
     box-sizing: border-box;
     padding-left: 5%;
+    padding-right: 5%;
     min-width: 80%;
     background-color: var(--bg-color);
     display: flex;
+    align-items: center;
     flex-flow: column nowrap;
   }
 
