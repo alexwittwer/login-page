@@ -2,20 +2,21 @@
   font-family: "Raleway", sans-serif;
   margin: 0;
   padding: 0;
-  color: white;
+  color: rgb(56, 44, 28);
+}
+
+p {
+  max-width: clamp(40ch, 60ch, 75ch);
 }
 
 :root {
-  padding: 0;
-  margin: 0;
-  border: 0;
-  background-color: rgb(17, 17, 17);
+  background-color: rgb(236, 218, 201);
 }
 
 .page-container {
   display: flex;
   flex-flow: row wrap;
-  background-color: rgb(17, 17, 17);
+  background-color: rgb(248, 224, 201);
 }
 
 .img-container {
@@ -24,26 +25,21 @@
   display: flex;
   width: 40vw;
   height: 100%;
-  padding: 0px;
-  margin: 0px;
 }
 
 .img-container img {
   max-inline-size: 100%;
   max-block-size: 100%;
-  height: 100%;
-  margin: 0px;
-  border: none;
-  padding: 0px;
+  height: 100vh;
   object-fit: cover;
 }
 
 .sign-up {
   box-sizing: border-box;
-  padding: 40px;
+  padding: 30px;
   width: 58.4vw;
   height: 100vh;
-  background-color: rgb(17, 17, 17);
+  background-color: rgb(248, 224, 201);
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -52,9 +48,9 @@
 @media screen and (max-width: 960px) {
   .sign-up {
     box-sizing: border-box;
-    padding: 40px;
+    padding-left: 40px;
     width: 100vw;
-    background-color: rgb(19, 18, 18);
+    background-color: rgb(248, 224, 201);
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -70,15 +66,11 @@
 .hero-txt {
   font-family: "Raleway", serif;
   font-size: 4rem;
-  padding-block: 0rem 4rem;
+  padding-bottom: 3rem;
 }
 
 .dummy-txt > p {
   margin-bottom: 1rem;
-}
-
-.img-container img {
-  height: 100vh;
 }
 
 .dummy-txt {
@@ -91,11 +83,22 @@
 }
 
 input {
-  background-color: rgba(255, 255, 240, 0.199);
-  box-sizing: border-box;
+  background-color: rgba(90, 90, 90, 0.39);
   padding: 15px;
   margin: 5px;
   border-style: none;
+}
+
+input:focus {
+  box-sizing: inherit;
+  border-color: rgb(31, 169, 204);
+  border-style: solid;
+  border-width: 4px;
+  outline: none;
+}
+
+input:required {
+  box-shadow: inset 0px 0px 0px 3px rgb(27, 122, 160);
 }
 
 label {
