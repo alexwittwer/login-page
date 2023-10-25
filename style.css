@@ -5,6 +5,30 @@
   outline: 1px solid red; */
 }
 
+@keyframes populate {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
 p {
   max-width: clamp(40ch, 60ch, 75ch);
 }
@@ -26,10 +50,6 @@ p {
   font-family: "Pacifico", cursive;
 }
 
-body {
-  background-color: var(--bg-color);
-}
-
 :root {
   --txtcolor: rgb(197, 195, 192);
   --pwd-invalid: rgb(167, 66, 27);
@@ -45,6 +65,7 @@ body {
 }
 
 .img-container {
+  animation: 1s ease-in 0s 1 populate;
   box-sizing: border-box;
   position: relative;
   display: flex;
@@ -60,6 +81,7 @@ body {
 }
 
 .sign-up {
+  animation: 0.5s ease-out 0s 1 slideFromLeft;
   box-sizing: border-box;
   padding-left: 30px;
   width: 58.4vw;
