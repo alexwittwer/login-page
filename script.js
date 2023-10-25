@@ -5,7 +5,7 @@ const number = document.querySelector("#number");
 const length = document.querySelector("#length");
 const message = document.querySelector("#message");
 
-// When the user clicks on the password field, show the message box
+// When user clicks password field, show message box
 myInput.addEventListener("focus", () => {
   message.style.display = "block";
 });
@@ -33,15 +33,16 @@ function validPassword(input) {
   }
 }
 
-// When the user starts to type something inside the password field
+// Validate on input
 myInput.addEventListener("keyup", () => {
-  // Validate lowercase letters
-
+  // Validate password field
   if (validPassword(myInput)) {
     myInput.style.boxShadow = "0px 0px 10px 0px var(--pwd-valid)";
   } else {
     myInput.style.boxShadow = "none";
   }
+
+  // Validate lowercase letters
   let lowerCaseLetters = /[a-z]/g;
   if (myInput.value.match(lowerCaseLetters)) {
     letter.classList.remove("invalid");

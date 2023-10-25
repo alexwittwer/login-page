@@ -1,22 +1,40 @@
 * {
   font-family: "Raleway", sans-serif;
   margin: 0;
-  padding: 0;
+  padding: 0; /* 
+  outline: 1px solid red; */
 }
 
 p {
   max-width: clamp(40ch, 60ch, 75ch);
 }
 
+.logo {
+  position: absolute;
+  top: 20vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(121, 78, 29, 0.473);
+  gap: 1.5rem;
+}
+
+#baker {
+  font-size: 2.5rem;
+  color: aliceblue;
+  font-family: "Pacifico", cursive;
+}
+
 body {
+  background-color: var(--bg-color);
 }
 
 :root {
-  --bgcolor: "rgb(32, 32, 32)";
   --txtcolor: rgb(197, 195, 192);
   --pwd-invalid: rgb(167, 66, 27);
   --pwd-valid: rgb(81, 150, 16);
-  background-color: rgb(32, 32, 32);
+  --bg-color: rgb(32, 32, 32);
 }
 
 .page-container {
@@ -34,7 +52,7 @@ body {
   height: 100%;
 }
 
-.img-container img {
+.img-container > img {
   max-inline-size: 100%;
   max-block-size: 100%;
   height: 100vh;
@@ -43,30 +61,38 @@ body {
 
 .sign-up {
   box-sizing: border-box;
-  padding: 30px;
+  padding-left: 30px;
   width: 58.4vw;
   height: 100vh;
-  background-color: var(--bgcolor);
+  background-color: var(--bg-color);
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
+  align-items: center;
 }
 
 @media screen and (max-width: 960px) {
   .page-container {
     display: flex;
     flex-flow: column wrap;
-    background-color: var(--bgcolor);
+    background-color: var(--bg-color);
     color: var(--txtcolor);
-    gap: 0px;
+    gap: 5px;
     align-items: center;
+  }
+
+  .img-container > img {
+    max-inline-size: 100%;
+    max-block-size: 90%;
+    height: 100vh;
+    object-fit: cover;
   }
 
   .sign-up {
     box-sizing: border-box;
-    padding-left: 10%;
+    padding-left: 5%;
     min-width: 80%;
-    background-color: var(rgb(32, 32, 32));
+    background-color: var(--bg-color);
     display: flex;
     flex-flow: column nowrap;
   }
@@ -74,12 +100,11 @@ body {
   .img-container {
     box-sizing: border-box;
     width: 100vw;
-    height: 540px;
+    height: 480px;
   }
+
   form {
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 0.4rem;
+    display: flex;
   }
 }
 
@@ -87,19 +112,23 @@ body {
   font-family: "Raleway", serif;
   font-size: 4rem;
   padding-bottom: 3rem;
+  align-self: flex-start;
 }
 
 .dummy-txt > p {
   margin-bottom: 1rem;
+  align-self: flex-start;
 }
 
 .dummy-txt {
   font-size: 1rem;
+  align-self: flex-start;
 }
 
 .remote-txt {
   padding: 1rem 0px;
   font-size: 1.25rem;
+  align-self: flex-start;
 }
 
 input {
@@ -129,16 +158,17 @@ input:focus {
   margin-top: 0px;
   font-size: 1rem;
 }
+
 #message p {
   padding: 0px 5px;
 }
 
-/* Add a green text color and a checkmark when the requirements are right */
+/* Add a green text color when the requirements are right */
 .valid {
   color: rgb(39, 109, 17);
 }
 
-/* Add a red text color and an "x" icon when the requirements are wrong */
+/* Add a red text color when the requirements are wrong */
 .invalid {
   color: rgb(160, 85, 34);
 }
@@ -155,7 +185,8 @@ label {
 form {
   box-sizing: border-box;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column nowrap;
+  align-self: flex-start;
 }
 
 #submit {
